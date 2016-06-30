@@ -1,0 +1,42 @@
+$ gradle fatJar
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:fatJar UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 0.495 secs
+
+
+---
+
+
+$ java -jar ./build/libs/play-with-resteasy-wadl.jar
+Server started and listening on http://localhost:8080
+WADL at http://localhost:8080/application.xml
+Press CTRL-C to stop...
+
+
+---
+
+$ curl http://localhost:8080/application.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <resources base="/">
+        <resource path="/application.xml">
+            <method id="output" name="GET">
+                <response>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+        </resource>
+        <resource path="/">
+            <resource path="/hello">
+                <method id="hello" name="GET">
+                    <response/>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
