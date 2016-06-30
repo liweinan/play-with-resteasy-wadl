@@ -5,10 +5,12 @@ repositories {
     mavenLocal()
 }
 
+def resteasyVersion = '3.0.17.Final'
+
 dependencies {
-    compile group: 'org.jboss.resteasy', name: 'resteasy-wadl', version: '3.1.0-SNAPSHOT'
-    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.1.0-SNAPSHOT'
-    compile group: 'org.jboss.resteasy', name: 'resteasy-jdk-http', version: '3.1.0-SNAPSHOT'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-wadl', version: resteasyVersion
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: resteasyVersion
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jdk-http', version: resteasyVersion
 }
 
 // create a single Jar with all dependencies
