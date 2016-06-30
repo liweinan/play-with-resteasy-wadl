@@ -19,6 +19,9 @@ public class Main {
         ResteasyWadlDefaultResource.getServices().put("/",
                 org.jboss.resteasy.wadl.ResteasyWadlGenerator.generateServiceRegistry(contextBuilder.getDeployment()));
         httpServer.start();
+        System.out.println("Server started and listening on http://localhost:8080");
+        System.out.println("WADL at http://localhost:8080/application.xml");
+        System.out.println("Press CTRL-C to stop...");
         System.in.read();
     }
 }

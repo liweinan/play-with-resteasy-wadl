@@ -10,3 +10,13 @@ dependencies {
     compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.1.0-SNAPSHOT'
     compile group: 'org.jboss.resteasy', name: 'resteasy-jdk-http', version: '3.1.0-SNAPSHOT'
 }
+
+// create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'org.weli.resteasy.wadl.Main'
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
