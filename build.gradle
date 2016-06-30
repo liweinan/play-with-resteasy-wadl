@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile group: 'org.jboss.resteasy', name: 'resteasy-wadl', version: '3.1.0-SNAPSHOT'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.1.0-SNAPSHOT'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jdk-http', version: '3.1.0-SNAPSHOT'
+}
